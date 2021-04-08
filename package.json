@@ -1,0 +1,22 @@
+{
+  "name": "snsbackend",
+  "version": "1.0.0",
+  "description": "snsbackend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nabicore/SNSBackend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nabicore/SNSBackend/issues"
+  },
+  "homepage": "https://github.com/nabicore/SNSBackend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
