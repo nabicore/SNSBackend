@@ -30,13 +30,29 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', (req, res) => {
-    console.log(req.body);
     snsFeeds.push({
         id: snsFeeds.length + 1,
         created_at: Date.now(),
         text: req.body.text,
     });
     res.send(200);
+});
+
+app.put('/', (req, res) => {
+    const targetId = req.body.id;
+    const idx = snsFeeds.findIndex(feed => feed.id === targetId);
+    if (idx < 0) {
+        //TODO: ID not found error
+    }
+
+    snsFeeds[idx].text = req.body.text;
+    res.sendStatus(200);
+});
+
+app.delete('/', (req, res) => {
+    const targetId = req.body.id;
+    snsFeeds = snsFeeds.filter(feed => feed.id !== targetId);
+    res.sendStatus(200);
 });
 
 app.listen(3001, () => {
